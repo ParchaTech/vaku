@@ -1,0 +1,24 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { languages, defaultLocale } from "@constants/constants";
+
+import TranslateIcon from "@assets/icons/translate.svg";
+
+// en | es
+const lang = Astro.currentLocale;
+const swappedLang =
+    lang === defaultLocale
+        ? languages.filter((language) => language !== defaultLocale)[0]
+        : defaultLocale;
+
+// about | contact | home
+const pathname = Astro.url.pathname;
+const langlessPathname =
+    lang === defaultLocale ? pathname : pathname.replace(`/${lang}`, "");
+
+const newUrl = getRelativeLocaleUrl(swappedLang, langlessPathname);
+---
+
+<a href={newUrl}>
+    <TranslateIcon />
+</a>
