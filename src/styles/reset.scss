@@ -1,21 +1,27 @@
-/* Reset CSS */
 *,
 *::before,
 *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html,
 body {
     height: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
     font-family: sans-serif;
+    line-height: 1.15;
 }
 
 body {
+    font-family: sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 img,
@@ -32,4 +38,111 @@ button,
 textarea,
 select {
     font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+    padding-left: 0;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+:root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font: inherit;
+    font-weight: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 0;
+}
+
+::placeholder {
+    color: inherit;
+    opacity: 0.6;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* 13. Respect reduced motion preferences - disable animations/transitions for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea,
+select {
+    line-height: inherit;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+#root,
+#__astro {
+    isolation: isolate;
+}
+
+:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+strong,
+b {
+    font-weight: bolder;
+}
+
+em,
+i {
+    font-style: italic;
 }

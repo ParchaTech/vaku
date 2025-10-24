@@ -46,3 +46,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 🎨 Styling
+
+For details about CSS reset decisions, typography, accessibility considerations, and `!important` usage, see the [styles documentation](src/styles/README.md).
